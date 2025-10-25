@@ -19,7 +19,6 @@ import Swal from 'sweetalert2';
   templateUrl: './menu.html'
 })
 export class Menu {
-  loggin: boolean = true;
 
   @Output() toggleSidenav = new EventEmitter<void>();
 

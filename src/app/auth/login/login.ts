@@ -58,7 +58,7 @@ export class Login implements OnInit {
               }).then(result => {
                 if(result.isConfirmed) {
                   this.router.navigate(['/'])
-                };
+                }
               });
             }
           }, error: (data: any) => {
