@@ -43,6 +43,7 @@ export class Login implements OnInit {
       if (this.form.valid) {
         this.user.username = this.form.get('username')?.value;
         this.user.password = this.form.get('password')?.value;
+        console.log(this.user);
         this.authService.login(this.user).subscribe({
           next: (response: any) => {
             if(response.success) {
