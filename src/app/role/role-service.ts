@@ -22,4 +22,16 @@ export class RoleService {
   createRole(role: Role) : Observable<any> {
     return this.httpclient.post<any>(`${this.endPointRole}/roles`,{roleName: role.name});
   }
+
+  updateRole(roleId: string, roleName: any) {
+    return this.httpclient.put(`${this.endPointRole}/roles/${roleId}`, {roleName});
+  }
+
+  deleteRole(roleId: string) {
+    return this.httpclient.delete(`${this.endPointRole}/roles/${roleId}`);
+  }
+
+  searchById(roleId: string) {
+    return this.httpclient.get(`${this.endPointRole}/roles/${roleId}`);
+  }
 }
