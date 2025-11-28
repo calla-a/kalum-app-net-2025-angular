@@ -22,7 +22,7 @@ export class Menu {
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, public authService: AuthService) {
 
   }
 
@@ -40,9 +40,13 @@ export class Menu {
       }).then(result => {
         if(result.isConfirmed) {
           this.authService.logout();
-          this.router.navigate(['/login']);
+          this.router.navigate(['/dashboard']);
         }
       });
     }
+  }
+
+  login() {
+    this.router.navigate(['/login']);
   }
 }
